@@ -1,0 +1,10 @@
+<div class="flex flex-row justify-between items-center">
+  <input (click)="changeSelection()" class="mr-3 justify-self-start" type="checkbox" name="complited" [checked]="todo()?.state">
+  <p
+    class="text-sm w-full"
+    [ngClass]="{'line-through text-gray-400': checkItem()}"
+  >
+    {{ todo()?.task }}
+  </p>
+  <i class="iconoir-trash" (click)="deleteSelected()"></i>
+</div>

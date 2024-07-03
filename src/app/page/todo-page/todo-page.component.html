@@ -1,0 +1,21 @@
+<div class="h-dvh w-dvw bg-gray-200 flex justify-center items-center">
+
+  <div class="w-80 min-h-96 bg-gray-50 rounded shadow-lg p-2">
+    <h1 class="text-2xl mb-2">Lista de pendientes</h1>
+
+    <app-new-todo (outTask)="addTask($event)" />
+
+    @for( todo of todos(); track todo.id ) {
+      <app-item-todo
+        [todo]="todo"
+        (changeTodo)="changetTodo($event)"
+        (deleteTodo)="deleteTodo(todo.id)"
+      />
+    }
+    
+    @if (viewDelete()) {
+      <app-delete-todos (click)="selectAllTodosSelected()" />
+    }
+  </div>
+
+</div>
