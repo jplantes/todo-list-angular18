@@ -1,0 +1,14 @@
+{
+  "todos": [
+    {
+      "id": "87dffdaa-14ab-4e35-8054-03b670261dee",
+      "state": false,
+      "task": "Estudiar Angular 18"
+    },
+    {
+      "id": "a2e32567-5a72-403a-a59b-81fa7e102ae7",
+      "state": false,
+      "task": "Estudiar NGRX con Angualr 18"
+    }
+  ]
+}

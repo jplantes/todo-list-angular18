@@ -11,6 +11,8 @@
         (changeTodo)="changetTodo($event)"
         (deleteTodo)="deleteTodo(todo.id)"
       />
+    } @empty {
+      <p class="text-md text-gray-400 text-center">No hay tareas cargadas.</p>
     }
     
     @if (viewDelete()) {

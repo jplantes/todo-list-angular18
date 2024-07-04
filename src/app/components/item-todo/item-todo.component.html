@@ -1,8 +1,13 @@
 <div class="flex flex-row justify-between items-center">
-  <input (click)="changeSelection()" class="mr-3 justify-self-start" type="checkbox" name="complited" [checked]="todo()?.state">
+  <input
+    (click)="changeSelection()"
+    [checked]="todo()!.state"
+    class="mr-3 justify-self-start" type="checkbox"
+    name="complited"
+  >
   <p
     class="text-sm w-full"
-    [ngClass]="{'line-through text-gray-400': checkItem()}"
+    [ngClass]="{'line-through text-gray-400': todo()!.state }"
   >
     {{ todo()?.task }}
   </p>

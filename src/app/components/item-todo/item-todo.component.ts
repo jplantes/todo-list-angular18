@@ -1,11 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, input, output, signal } from '@angular/core';
+import { Todo } from '../../interfaces/todos.interface';
 
-interface Todo {
-  id: string;
-  task: string;
-  state: boolean;
-}
 
 @Component({
   selector: 'app-item-todo',
@@ -24,7 +20,7 @@ export class ItemTodoComponent implements OnInit {
   public checkItem = signal(this.todo()?.state);
   
   public changeSelection() {
-    this.checkItem.update( value => !value );
+    this.checkItem.update( () => !this.todo()?.state );
 
     this.changeTodo.emit({
       ...this.todo()!,
